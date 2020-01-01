@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+  concourse-db:
+    image: postgres:9.5
+    environment:
+      POSTGRES_DB: concourse
+      POSTGRES_USER: concourse
+      POSTGRES_PASSWORD: changeme
+      PGDATA: /database
+
+  concourse-web:
+    image: concourse/concourse:3.14.1
+    links: [concourse-db]
+    command: web
+    depends_on: [concourse-db]
+    ports: ["8080:8080", "2222:2222"]
+    volumes: ["./keys/web:/concourse-keys"]
+    restart: unless-stopped # required so that it retries until conocurse-db comes up
+    environment:
+      CONCOURSE_NO_REALLY_I_DONT_WANT_ANY_AUTH: "true"
+      CONCOURSE_POSTGRES_HOST: concourse-db
+      CONCOURSE_POSTGRES_USER: concourse
+      CONCOURSE_POSTGRES_PASSWORD: changeme
+      CONCOURSE_POSTGRES_DATABASE: concourse
+
+  concourse-worker:
+    image: concourse/concourse:3.14.1
+    privileged: true
+    links: [concourse-web]
+    depends_on: [concourse-web]
+    command: worker
+    volumes: ["./keys/worker:/concourse-keys"]
+    environment:
+      CONCOURSE_TSA_HOST: concourse-web:2222
+      CONCOURSE_GARDEN_DNS_SERVER: concourse-web
+
+  concourse-worker-2:
+    image: concourse/concourse:3.14.1
+    privileged: true
+    links: [concourse-web]
+    depends_on: [concourse-web]
+    command: worker
+    volumes: ["./keys/worker:/concourse-keys"]
+    environment:
+      CONCOURSE_TSA_HOST: concourse-web:2222
+      CONCOURSE_GARDEN_DNS_SERVER: concourse-web
+
+#  minio:
+#    image: minio/minio:RELEASE.2018-07-23T18-34-49Z
+#    ports:
+#      - 9000:9000
+#    volumes:
+#      - ~/minio-files:/export
+#      - ~/minio-files/config:/root/.minio
+#      - ~/minio-files/carthage-cache:/carthage-cache
+#      - ~/minio-files/artifacts/server-build:/artifacts/server-build
+#    command: ["server", "/export"]
+#    environment:
+#      - "MINIO_ACCESS_KEY=FN00R2H2N543DFBKNUQF"
+#      - "MINIO_SECRET_KEY=VQV415MVNnJSmyhaUVyrBv6JBzeTNa5fr/4H6ds/"
