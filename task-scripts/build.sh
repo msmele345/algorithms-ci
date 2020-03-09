@@ -6,4 +6,4 @@ cd algorithm-api-git/
 #cp -r algorithm-api-git/application/build/libs/* algorithm-api-jar/
 #cp -r algorithm-api-git/application/build/libs/* ../build/algorithm-api-jar/
 
-popd
+#popd
