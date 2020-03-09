@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd algorithm-api-git/
+cd algorithm-api-git/
 
 ./gradlew clean test
 #cp -r algorithm-api-git/application/build/libs/* algorithm-api-jar/
