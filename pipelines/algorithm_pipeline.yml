@@ -9,7 +9,7 @@ resources:
     branch: master
     skip_ssl_verification: true
 
-- name: algorithm-ci-git
+- name: algorithms-ci-git
   type: git
   source:
     uri: https://github.com/msmele345/algorithms-ci
@@ -36,10 +36,10 @@ jobs:
     public: true
     plan:
       - get: algorithm-api-git
-      - get: algorithm-ci-git
+      - get: algorithms-ci-git
         trigger: true
       - task: build
-        file: algorithms-ci/tasks/build/build.yml
+        file: algorithms-ci-git/tasks/build/build.yml
 
 
 

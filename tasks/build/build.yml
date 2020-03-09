@@ -11,8 +11,8 @@ image_resource:
 #scripts
 inputs:
   - name: algorithm-api-git
-#  - name: algorithm-ci-git
-  - name: task-scripts
+  - name: algorithms-ci-git
+#  - name: task-scripts
 
 #outputs:
 #  - name: build
