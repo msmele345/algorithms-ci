@@ -12,7 +12,6 @@ image_resource:
 inputs:
   - name: algorithm-api-git
   - name: algorithms-ci-git
-#  - name: task-scripts
 
 #outputs:
 #  - name: build
@@ -21,7 +20,8 @@ inputs:
 #  - path: .gradle/
 
 run:
-  path: echo
-  args: [cleaned algorithm-api successfully]
+#  path: echo
+#  args: [cleaned algorithm-api successfully]
 #  path: ./task-scripts/build.sh
-#  path: algorithm-ci-git/tasks/build/build.sh
+#  path: algorithms-ci-git/tasks/build/build.sh
+  path: algorithms-ci-git/task-scripts/build.sh
