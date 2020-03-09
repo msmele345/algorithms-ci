@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 pushd algorithm-api-git/
 
 ./gradlew clean test
