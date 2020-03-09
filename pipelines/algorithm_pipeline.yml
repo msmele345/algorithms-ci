@@ -1,0 +1,52 @@
+resource_types:
+  #version repo
+  #uris must got in vault
+resources:
+- name: algorithm-api-git
+  type: git
+  source:
+    uri: https://github.com/msmele345/Algos
+    branch: master
+    skip_ssl_verification: true
+
+- name: algorithm-ci-git
+  type: git
+  source:
+    uri: https://github.com/msmele345/algorithms-ci
+    branch: master
+    skip_ssl_verification: true
+
+#- name: algorithm-cloud-processor-git
+#  type: git
+#  source:
+#    uri: https://github.com/msmele345/algorithm-cloud-processor
+#    branch: master
+#    skip_ssl_verification: true
+#
+#- name: algorithm-producer-git
+#  type: git
+#  source:
+#    uri: https://github.com/msmele345/algorithm-producer
+#    branch: master
+#    skip_ssl_verification: true
+
+
+jobs:
+  - name: build-and-test-api
+    public: true
+    plan:
+      - get: algorithm-api-git
+      - get: algorithm-ci-git
+        trigger: true
+      - task: build
+        file: algorithms-ci/tasks/build/build.yml
+
+
+
+
+#groups:
+#  - name: algorithm-api
+#    jobs:
+#      - build-and-test-api
+#  - name: algorithm-cloud-processor
+#  - name: algorithm-producer
