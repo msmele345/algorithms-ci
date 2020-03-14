@@ -3,6 +3,7 @@
 **/.DS_Store
 **.log
 *credentials.yml
+*.idea
 
 
 

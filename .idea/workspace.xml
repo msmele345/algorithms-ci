@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b84c33d1-a032-4bc1-b9fe-b39da9aa7527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/box/concourse/fly-pipeline.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/box/concourse/get_vault.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/box/concourse/run_pipeline.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-scripts/build-processor.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task-scripts/build-producer.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/build/build-processor.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/build/build-producer.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/fetch-secrets/fetch-secrets.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/box/concourse/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/box/concourse/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipelines/algorithm_pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pipelines/algorithm_pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task-scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/task-scripts/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/build/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/build/build.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +115,7 @@
       <workItem from="1583876211370" duration="778000" />
       <workItem from="1583937722300" duration="1579000" />
       <workItem from="1584031245441" duration="578000" />
-      <workItem from="1584191890104" duration="1096000" />
+      <workItem from="1584191890104" duration="3441000" />
     </task>
     <servers />
   </component>
@@ -160,10 +149,10 @@
     </state>
     <state x="99" y="369" key="com.intellij.ide.util.TipDialog/-1920.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1583937757957" />
     <state x="99" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1584031261900" />
-    <state x="-1302" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583938443861">
+    <state x="-1302" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584194995800">
       <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
-    <state x="-1302" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1583938443861" />
+    <state x="-1302" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1584194995800" />
     <state x="0" y="150" key="new project wizard" timestamp="1583779916428">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
