@@ -8,7 +8,8 @@ mkdir ../jars/stubs
 
 #./gradlew clean test
 ./gradlew build
-cp algorithm-api-git/build/libs/*.jar ../jars/artifact/algorithm-api-jar/
+cp /tmp/build/80754af9/algorithm-api-git/build/libs/*.jar ../jars/artifact/algorithm-api-jar/
+#cp target/*.jar ../build/algorithm-api.jar
 #cp -r algorithm-api-git/application/build/libs/* ../build/algorithm-api-jar/
 
 popd || exit
