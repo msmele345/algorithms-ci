@@ -10,14 +10,14 @@ resources:
     branch: master
     skip_ssl_verification: true
 
-#- name: algorithm-api-artifact
-#  type: s3
-#  source:
-#    bucket: algorithm-api
-#    region_name: us-east-2
-#    versioned_file: demo-app.jar
-#    access_key_id: ((aws-key-id))
-#    secret_access_key: ((aws-access-key))
+- name: algorithm-api-artifact
+  type: s3
+  source:
+    bucket: algorithm-api
+    region_name: us-east-2
+    versioned_file: algorithm-api.jar
+    access_key_id: ((aws-key-id))
+    secret_access_key: ((aws-access-key))
 
 - name: algorithms-ci-git
   #get ci repo with tasks and scripts
