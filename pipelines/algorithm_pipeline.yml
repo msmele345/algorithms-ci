@@ -18,13 +18,6 @@ resources:
     branch: master
     skip_ssl_verification: true
 
-#poc with dates
-- name: resource-gist
-  type: git
-  source:
-    branch: master
-    uri: ((gist_uri))
-    private_key: ((private_key))
 
 #for the real semver repo
 - name: algorithm-api-version
@@ -58,14 +51,20 @@ jobs:
     plan:
       - get: algorithm-api-git
       - get: algorithms-ci-git
-      - get: algorithm-api-version
-        params: {bump: patch}
         trigger: true
       - task: build
         file: algorithms-ci-git/tasks/build/build.yml
         #output is build folder which should contain jar
         #jar can be used as input to artifact/minio task
 
+
+  - name: bump-patch
+    public: true
+    plan:
+      - get: algorithm-api-version
+        params: {bump: patch}
+      - put: algorithm-api-version
+        params: {file: algorithm-api-version/version}
 
 #  - name: build-and-test-processor
 #    public: true
@@ -86,21 +85,3 @@ jobs:
 #      - task: build
 #        file: algorithms-ci-git/tasks/build/build-producer.yml
 
-
-  - name: bump-patch
-    public: true
-    plan:
-      - get: resource-version
-        params: {bump: minor}
-      - put: resource-version
-        params: {file: resource-version/version}
-
-#groups:
-#  - name: algorithm-api
-#    jobs:
-#      - build-and-test-api
-#      - job-bump-date
-#  - name: algorithm-cloud-processor
-#    jobs: build-and-test-processor
-#  - name: algorithm-producer
-#    jobs: build-and-test-producer
