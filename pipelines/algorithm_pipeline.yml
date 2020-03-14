@@ -77,7 +77,7 @@ jobs:
             source: {repository: starkandwayne/concourse}
 
           inputs:
-            - name: algorithm-ci-git
+            - name: algorithms-ci-git
             - name: resource-gist
           outputs:
             - name: updated-gist

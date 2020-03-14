@@ -14,10 +14,14 @@ inputs:
   - name: algorithms-ci-git
 
 outputs:
-  - name: build
+  - name: jars
+  - name: gradle
 
-#caches:
-#  - path: .gradle/
+params:
+  GRADLE_USER_HOME: /tmp/.gradle
+
+caches:
+  - path: /tmp/.gradle
 
 run:
   path: algorithms-ci-git/task-scripts/build.sh

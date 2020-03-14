@@ -4,7 +4,7 @@
     <list default="true" id="b84c33d1-a032-4bc1-b9fe-b39da9aa7527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipelines/algorithm_pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pipelines/algorithm_pipeline.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/task-scripts/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/build/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/build/build.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +115,7 @@
       <workItem from="1583876211370" duration="778000" />
       <workItem from="1583937722300" duration="1579000" />
       <workItem from="1584031245441" duration="578000" />
-      <workItem from="1584191890104" duration="3441000" />
+      <workItem from="1584191890104" duration="4698000" />
     </task>
     <servers />
   </component>
