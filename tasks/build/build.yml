@@ -13,15 +13,11 @@ inputs:
   - name: algorithm-api-git
   - name: algorithms-ci-git
 
-#outputs:
-#  - name: build
+outputs:
+  - name: build
 
 #caches:
 #  - path: .gradle/
 
 run:
-#  path: echo
-#  args: [cleaned algorithm-api successfully]
-#  path: ./task-scripts/build.sh
-#  path: algorithms-ci-git/tasks/build/build.sh
   path: algorithms-ci-git/task-scripts/build.sh

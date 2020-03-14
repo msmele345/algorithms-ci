@@ -1,8 +1,6 @@
 version: '3'
 
 services:
-
-  services:
     concourse-db:
       image: postgres
       environment:

@@ -10,7 +10,7 @@ image_resource:
 #OR
 #scripts
 inputs:
-  - name: algorithm-api-git
+  - name: algorithm-cloud-processor-git
   - name: algorithms-ci-git
 
 outputs:
@@ -20,4 +20,4 @@ outputs:
 #  - path: .gradle/
 
 run:
-  path: algorithms-ci-git/task-scripts/build.sh
+  path: algorithms-ci-git/task-scripts/build-processor.sh

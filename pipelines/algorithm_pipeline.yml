@@ -1,7 +1,8 @@
 resource_types:
   #version repo
-  #uris must got in vault
+  #uris must go in vault
 resources:
+  #get project repo
 - name: algorithm-api-git
   type: git
   source:
@@ -10,11 +11,31 @@ resources:
     skip_ssl_verification: true
 
 - name: algorithms-ci-git
+  #get ci repo with tasks and scripts
   type: git
   source:
     uri: https://github.com/msmele345/algorithms-ci
     branch: master
     skip_ssl_verification: true
+
+#poc with dates
+- name: resource-gist
+  type: git
+  source:
+    branch: master
+    uri: ((gist_uri))
+    private_key: ((private_key))
+
+#for the real semver repo
+#- name: resource-version
+#  type: semver
+#  source:
+#    driver: git
+#    file: verison
+#    branch: version
+#    uri: ((version_uri))
+#    private_key: ((private_key))
+
 
 #- name: algorithm-cloud-processor-git
 #  type: git
@@ -30,7 +51,7 @@ resources:
 #    branch: master
 #    skip_ssl_verification: true
 
-
+#names of the inputs are src starting points for paths
 jobs:
   - name: build-and-test-api
     public: true
@@ -40,13 +61,67 @@ jobs:
         trigger: true
       - task: build
         file: algorithms-ci-git/tasks/build/build.yml
+        #output is build folder which should contain jar
+        #jar can be used as input to artifact/minio task
+
+  - name: job-bump-date
+    serial: true
+    plan:
+      - get: algorithms-ci-git
+      - get: resource-gist
+      - task: bump-timestamp-file
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: starkandwayne/concourse}
+
+          inputs:
+            - name: algorithm-ci-git
+            - name: resource-gist
+          outputs:
+            - name: updated-gist
+          run:
+            path: algorithms-ci-git/task-scripts/bump-patch.sh
+      - put: resource-gist
+        params:
+          repository: updated-gist
 
 
+#  - name: build-and-test-processor
+#    public: true
+#    plan:
+#      - get: algorithm-cloud-processor-git
+#      - get: algorithms-ci-git
+#        trigger: true
+#      - task: build
+#        file: algorithms-ci-git/tasks/build/build-processor.yml
+#
+#
+#  - name: build-and-test-producer
+#    public: true
+#    plan:
+#      - get: algorithm-producer-git
+#      - get: algorithms-ci-git
+#        trigger: true
+#      - task: build
+#        file: algorithms-ci-git/tasks/build/build-producer.yml
 
+
+#  - name: bump-patch
+#    public: true
+#    plan:
+#      - get: resource-version
+#        params: {bump: minor}
+#      - put: resource-version
+#        params: {file: resource-version/version}
 
 #groups:
 #  - name: algorithm-api
 #    jobs:
 #      - build-and-test-api
+#      - job-bump-date
 #  - name: algorithm-cloud-processor
+#    jobs: build-and-test-processor
 #  - name: algorithm-producer
+#    jobs: build-and-test-producer

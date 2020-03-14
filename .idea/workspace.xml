@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b84c33d1-a032-4bc1-b9fe-b39da9aa7527" name="Default Changelist" comment="" />
+    <list default="true" id="b84c33d1-a032-4bc1-b9fe-b39da9aa7527" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/box/concourse/fly-pipeline.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/box/concourse/get_vault.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/box/concourse/run_pipeline.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-scripts/build-processor.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-scripts/build-producer.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/build/build-processor.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/build/build-producer.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/fetch-secrets/fetch-secrets.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box/concourse/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/box/concourse/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipelines/algorithm_pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pipelines/algorithm_pipeline.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-scripts/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/task-scripts/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/build/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/build/build.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +51,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tasks/build" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tasks/build" />
+      <recent name="$PROJECT_DIR$/task-scripts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/task-scripts" />
     </key>
@@ -103,7 +122,11 @@
       <workItem from="1578420217267" duration="9000" />
       <workItem from="1583361374216" duration="4933000" />
       <workItem from="1583510187892" duration="626000" />
-      <workItem from="1583590636077" duration="5532000" />
+      <workItem from="1583590636077" duration="14806000" />
+      <workItem from="1583876211370" duration="778000" />
+      <workItem from="1583937722300" duration="1579000" />
+      <workItem from="1584031245441" duration="578000" />
+      <workItem from="1584191890104" duration="1096000" />
     </task>
     <servers />
   </component>
@@ -132,5 +155,18 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="100" y="123" width="1072" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1583756146375" />
+    <state x="99" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1584031261900">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="99" y="369" key="com.intellij.ide.util.TipDialog/-1920.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1583937757957" />
+    <state x="99" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1584031261900" />
+    <state x="-1302" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583938443861">
+      <screen x="-1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="-1302" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.23.1920.1057/0.23.1680.1027@-1920.23.1920.1057" timestamp="1583938443861" />
+    <state x="0" y="150" key="new project wizard" timestamp="1583779916428">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="0" y="150" key="new project wizard/0.23.1680.1027@0.23.1680.1027" timestamp="1583779916428" />
   </component>
 </project>
