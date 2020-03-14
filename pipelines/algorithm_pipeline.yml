@@ -63,6 +63,10 @@ jobs:
         trigger: true
       - task: build
         file: algorithms-ci-git/tasks/build/build.yml
+      - put: algorithm-api-artifact
+        params:
+          file: jars/artifact/algorithm-api.jar
+          name: algorithm-api.jar
         #output is build folder which should contain jar
         #jar can be used as input to artifact/minio task
 
