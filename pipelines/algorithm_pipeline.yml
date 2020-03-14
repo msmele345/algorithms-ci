@@ -27,14 +27,14 @@ resources:
     private_key: ((private_key))
 
 #for the real semver repo
-#- name: resource-version
-#  type: semver
-#  source:
-#    driver: git
-#    file: verison
-#    branch: version
-#    uri: ((version_uri))
-#    private_key: ((private_key))
+- name: algorithm-api-version
+  type: semver
+  source:
+    driver: git
+    file: verison
+    branch: master
+    uri: ((api_version_uri))
+    private_key: ((private_key))
 
 
 #- name: algorithm-cloud-processor-git
@@ -58,34 +58,13 @@ jobs:
     plan:
       - get: algorithm-api-git
       - get: algorithms-ci-git
+      - get: algorithm-api-version
+        params: {bump: patch}
         trigger: true
       - task: build
         file: algorithms-ci-git/tasks/build/build.yml
         #output is build folder which should contain jar
         #jar can be used as input to artifact/minio task
-
-  - name: job-bump-date
-    serial: true
-    plan:
-      - get: algorithms-ci-git
-      - get: resource-gist
-      - task: bump-timestamp-file
-        config:
-          platform: linux
-          image_resource:
-            type: docker-image
-            source: {repository: starkandwayne/concourse}
-
-          inputs:
-            - name: algorithms-ci-git
-            - name: resource-gist
-          outputs:
-            - name: updated-gist
-          run:
-            path: algorithms-ci-git/task-scripts/bump-patch.sh
-      - put: resource-gist
-        params:
-          repository: updated-gist
 
 
 #  - name: build-and-test-processor
@@ -108,13 +87,13 @@ jobs:
 #        file: algorithms-ci-git/tasks/build/build-producer.yml
 
 
-#  - name: bump-patch
-#    public: true
-#    plan:
-#      - get: resource-version
-#        params: {bump: minor}
-#      - put: resource-version
-#        params: {file: resource-version/version}
+  - name: bump-patch
+    public: true
+    plan:
+      - get: resource-version
+        params: {bump: minor}
+      - put: resource-version
+        params: {file: resource-version/version}
 
 #groups:
 #  - name: algorithm-api
